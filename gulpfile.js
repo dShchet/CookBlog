@@ -27,6 +27,7 @@ let gulp = require("gulp"),
 	size = require("gulp-filesize"), 
 	rsync = require("gulp-rsync"), 
 	sourcemaps = require("gulp-sourcemaps"); 
+	ghPages = require('gulp-gh-pages');
 
 gulp.task("scss", function () {
 		return gulp
