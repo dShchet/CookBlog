@@ -260,22 +260,9 @@ gulp.task("watch", function () {
 	gulp.watch("src/images/**/*.*", gulp.parallel("images", "webp"));
 });
 
-gulp.task("deploy", function () {
-		return gulp.src("build/**").pipe(
-		rsync({
-			root: "build/", 
-			hostname: "yourLogin@yourIp", 
-			destination: "sitePath", 
-			
-			include: ["*.htaccess"], 
-			exclude: ["**/Thumbs.db", "**/*.DS_Store"], 
-			recursive: true, 
-			archive: true, 
-			silent: false, 
-			compress: true, 
-			progress: true, 
-		}),
-	);
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task("browser-sync", function () {
