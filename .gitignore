@@ -3,8 +3,7 @@
 .LSOverride
 .vs
 
-# production
-/build
+
 
 
 node_modules/
